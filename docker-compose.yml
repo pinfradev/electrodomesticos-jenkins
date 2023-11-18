@@ -1,0 +1,14 @@
+version: '3.0' 
+services: 
+  jenkins-service:
+    build: .
+    image: integracion-jenkins
+    hostname: jenkins
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+
+volumes:
+  jenkins_home:

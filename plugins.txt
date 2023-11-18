@@ -1,0 +1,5 @@
+git
+bootstrap5-api:5.3.2-2
+github:1.37.3
+jquery3-api:3.7.1-1
+docker-workflow:572.v950f58993843

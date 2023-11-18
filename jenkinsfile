@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+    stages {
+        stage('fetch project') {
+            steps {
+                checkout scmGit(branches: [[name: '*/feature/docker']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/pinfradev/electrodomesticos']])
+            }
+        }
+        stage('docker-compose') {
+            steps {
+                tool name: 'docker', type: 'dockerTool'
+                script {
+                    'sh docker-compose up'
+                }
+            }
+        }
+    }
+}
